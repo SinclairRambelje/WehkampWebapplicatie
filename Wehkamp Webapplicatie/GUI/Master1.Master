@@ -1,0 +1,95 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<script runat="server">
+
+
+    Protected Sub Button1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Protected Sub Menu1_MenuItemClick(sender As Object, e As MenuEventArgs)
+
+    End Sub
+
+    Protected Sub MenuLoggedIn_MenuItemClick(sender As Object, e As MenuEventArgs)
+
+    End Sub
+</script>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    
+<title>Wehkamp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
+      <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+<div id="top_right">
+    <asp:Label ID="LbWelkom" runat="server" Text="Label"></asp:Label>
+<a href="/GUI/Winkelmand.aspx">Mijn winkelwagen</a> | <a href="#">Checkout</a> | <a href="/GUI/Login.aspx">Log in</a> | <a href="/GUI/Registerpage.aspx">Registeer<asp:Menu ID="MenuLoggedIn" runat="server" Orientation="Horizontal" Visible="False" Font-Bold="True" Font-Size="15pt" OnMenuItemClick="MenuLoggedIn_MenuItemClick">
+        <Items>
+            <asp:MenuItem Text="Mijn gegevens" Value="Mijn gegevens" NavigateUrl="~/GUI/Mijn gegevens.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="Mijn bestellingen" Value="Mijn bestellingen" NavigateUrl="~/GUI/Mijn Bestellingen.aspx"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/GUI/Retourproces/Retourneren - stap 1.aspx" Text="Retourneren" Value="Retourneren"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/GUI/Mijn Retourneerafspraken.aspx" Text="Mijn Retournafspraken" Value="Mijn Retournafspraken"></asp:MenuItem>
+            <asp:MenuItem Text="Log out" Value="Log out" NavigateUrl="~/GUI/Logout.aspx"></asp:MenuItem>
+        </Items>
+    </asp:Menu>
+        </a>
+    &nbsp;<br />
+    <div style="float: right;">
+        <br/>
+        <br/>
+        </div>
+</div>
+<div id="container"> 
+<div id="header"> 
+    <a href="/GUI/Homepagina.aspx"><h1>Wehkamp</h1></a>
+<div class="right">
+<img src="/GUI/images/cart.gif" alt="Shopping Cart" /><span>Winkelmand</span><br />
+Items:
+    <asp:Label ID="LbWinkelmandItems" runat="server" Text="0"></asp:Label>
+    <br />
+    Totaal: €
+    <asp:Label ID="LbWinkelmandTotaal" runat="server" Text="0.00"></asp:Label>
+</div>
+        </div>
+<div class="s">
+    &nbsp;</div>
+        </div>
+
+    <div style="width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;">
+        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" OnMenuItemClick="Menu1_MenuItemClick">
+            <Items>
+                <asp:MenuItem NavigateUrl="~/GUI/ZoekPagina.aspx" Text="Zoeken in winkel" Value="Zoeken in winkel"></asp:MenuItem>
+                <asp:MenuItem Text="Jassen" Value="Jassen" NavigateUrl="~/GUI/PseudoDynamicASPMenuLink/Heren Jassen.aspx">
+                </asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/GUI/PseudoDynamicASPMenuLink/Vrouwen schoenen.aspx" Text="Vrouwen schoenen" Value="Vrouwen schoenen"></asp:MenuItem>
+            </Items>
+        </asp:Menu>
+</div>
+    
+<div  style="width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;"> 
+<div id="navcontainer"> 
+</div>
+    <div class ="dvPage">
+ <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server" >
+        
+        </asp:ContentPlaceHolder>
+    </div>
+<div id="footer">
+
+</div>
+</div>
+    </form>
+</body>
+</html>
